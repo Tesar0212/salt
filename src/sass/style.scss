@@ -1,0 +1,22 @@
+$title-font-size: 22px;
+$orange-color : #FF8B00;
+$purple-color : #7050E5;
+$white-color : #FFFFFF;
+
+
+html{
+    *{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+    }
+    body{
+        background: #F8F8F8;
+        font-family: Arial sans-serif;
+        font-size: 22px;
+        .container{
+            max-width: 1058px;
+        }
+    }
+}
