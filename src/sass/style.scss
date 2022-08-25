@@ -3,6 +3,52 @@ $orange-color : #FF8B00;
 $purple-color : #7050E5;
 $white-color : #FFFFFF;
 
+@mixin lg{
+    @media screen and (max-width: 1200px){
+        @content
+    }
+}
+@mixin md{
+    @media screen and (max-width: 992px){
+        @content
+    }
+}
+@mixin sm{
+    @media screen and (max-width: 768px){
+        @content
+    }
+}
+@mixin xs{
+    @media screen and (max-width: 500px){
+        @content
+    }
+}
+
+
+@font-face {
+    font-family: "Proximanova Bold";
+    src: url("../font/proximanova_bold.eot") format("embedded-opentype"),
+    url("../font/proximanova_bold.woff") format("woff"),
+    url("../font/proximanova_bold.woff2") format("woff2"),
+    url("../font/proximanova_bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Proximanova Semibold";
+    src: url("../font/proximanova_semibold.eot") format("embedded-opentype"),
+    url("../font/proximanova_semibold.woff") format("woff"),
+    url("../font/proximanova_semibold.woff2") format("woff2"),
+    url("../font/proximanova_semibold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Proximanova Regular";
+    src: url("../font/proximanova_regular.eot") format("embedded-opentype"),
+    url("../font/proximanova_regular.woff") format("woff"),
+    url("../font/proximanova_regular.woff2") format("woff2"),
+    url("../font/proximanova_regular.ttf") format("truetype");
+}
+
 
 html{
     *{
@@ -13,7 +59,7 @@ html{
     }
     body{
         background: #F8F8F8;
-        font-family: Arial sans-serif;
+        font-family: Proximanova Regular serif;
         font-size: 22px;
         .container{
             max-width: 1058px;
