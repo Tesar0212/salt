@@ -2,13 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
     <title>Title</title>
     <link rel="stylesheet" href="css/style.min.css">
     <script src="js/main.js"></script>
   </head>
   <body>
-    <header>Шапка</header>
-    <h1>Главная!</h1><img src="img/bg.jpg" alt="Задний фон">
+    <header>
+      <div class="container container--nav">
+        <nav>
+          <div class="nav__logo"><a href="#"><img src="img/Salt.svg" alt="Brand logo"></a></div>
+          <div class="nav__toggler"><span></span></div>
+          <ul class="nav__menu">
+            <li class="nav__menu-item active"><a href="#">Home</a></li>
+            <li class="nav__menu-item"><a href="#">Products</a></li>
+            <li class="nav__menu-item"><a href="#">Services</a></li>
+            <li class="nav__menu-item"><a href="#">Resources</a></li>
+            <li class="nav__menu-item"><a href="#">About</a></li>
+            <li class="nav__menu-item"><a href="#">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container container--landing">
+        <div class="header__landing-container">
+          <div class="header__landing-left landing-left">
+            <h1 class="landing-left__title">Device Authentication</h1>
+            <p class="landing-left__text">SALT Group is a world leader in  authentication and security. We have<br>a range of services to improve user authentication.<br>Discover the possibilities with SALT.</p>
+            <button class="landing-left__btn">GET STARTED</button>
+          </div>
+          <div class="header__landing-right landing-right"><img src="img/Twitter.svg" alt="Twitter logo"></div>
+        </div>
+        <div class="header__landing-arrow landing-arrow">
+          <div class="landing-arrow__text">FIND OUT MORE</div>
+          <div class="landing-arrow__btn"><a href="#"><img src="img/Arrow-down.svg" alt="Arrow down"></a></div>
+        </div>
+      </div>
+    </header>
     <footer>Футер</footer>
   </body>
 </html>

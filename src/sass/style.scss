@@ -2,6 +2,11 @@ $title-font-size: 22px;
 $orange-color : #FF8B00;
 $purple-color : #7050E5;
 $white-color : #FFFFFF;
+$font-bold : Proximanova Bold, sans-serif;
+$font-semibold : Proximanova Semibold, sans-serif;
+$font-regular : Proximanova Regular, sans-serif;
+
+
 
 @mixin lg{
     @media screen and (max-width: 1200px){
@@ -56,13 +61,289 @@ html{
         padding: 0;
         list-style-type: none;
         text-decoration: none;
+        border: none;
     }
     body{
         background: #F8F8F8;
-        font-family: Proximanova Regular serif;
-        font-size: 22px;
         .container{
-            max-width: 1058px;
+            margin: 0 auto;
+            @include lg{
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+        }
+
+        header{
+            padding-top: 32px;
+            background-image: url("../img/Background-landing.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            min-height: 778px;
+            @include md{
+                padding-top: 26px;
+            }
+            @include xs{
+                min-height: 764px;
+            }
+            .container--nav{
+                max-width: 1152px;
+                nav{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .nav__logo{
+                        a{
+                            display: inline-block;
+                            height: 100%;
+                            width: 100%;
+                            img{
+                                height: 100px;
+                                width: 78px;
+                                @include md{
+                                    height: 50px;
+                                    width: 39px;
+                                }
+                            }
+                        }
+                    }
+                    .nav__toggler{
+                        display: none;
+                        width: 32px;
+                        height: 32px;
+                        align-items: center;
+                        justify-content: center;
+                        @include md{
+                            display: flex;
+                        }
+                        span{
+                            display: inline-block;
+                            width: 24px;
+                            height: 3px;
+                            border-radius: 50px;
+                            background: $white-color;
+                            position: relative;
+                            &:before, &:after{
+                                content: "";
+                                display: block;
+                                background: $white-color;
+                                position: absolute;
+                                width: 100%;
+                                border-radius: 50px;
+                                height: 100%;
+                            }
+                            &:before{
+                                top: 8px;
+                            }
+                            &:after{
+                                bottom: 8px;
+                            }
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .nav__menu{
+                        margin-top: 7px;
+                        display: flex;
+                        @include md{
+                            display: none;
+                        }
+                        .nav__menu-item.active{
+                            &:after{
+                                opacity: 1;
+                                transition: .3s;
+                            }
+                        }
+                        .nav__menu-item{
+                            margin-left: 28px;
+                            position: relative;
+                            a{
+                                font-family: $font-bold;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 15px;
+                                line-height: 18px;
+                                color: $white-color;
+                                text-transform: uppercase;
+                            }
+                            &:first-child{
+                                margin-left: unset;
+                            }
+                            &:after{
+                                content: "";
+                                display: block;
+                                bottom: -8px;
+                                width: 120%;
+                                left: calc(0px - 10%);
+                                position: absolute;
+                                height: 3px;
+                                background: $orange-color;
+                                opacity: 0;
+                                transition: .3s;
+                            }
+                            &:hover{
+                                &:after{
+                                    opacity: 1;
+                                    transition: .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .container--landing{
+                max-width: 1152px;
+                display: flex;
+                margin-top: 124px;
+                flex-wrap: wrap;
+                @include md{
+                    margin-top: 53px;
+                }
+                .header__landing-container{
+                    display: flex;
+                    width: 100%;
+                    .header__landing-left.landing-left{
+
+
+                        margin-left: 82px;
+                        @include sm{
+                            margin-left: unset;
+                        }
+
+                        .landing-left__title{
+                            font-family: $font-bold;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 55px;
+                            line-height: 55px;
+                            color: $white-color;
+                            max-width: 552px;
+                            @include xs{
+                                max-width: 214px;
+                                font-size: 32px;
+                                line-height: 40px;
+                            }
+                        }
+                        .landing-left__text{
+                            margin-top: 12px;
+                            font-family: $font-semibold;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 30px;
+                            color: $white-color;
+                            max-width: 548px;
+                            @include xs{
+                                margin-top: 16px;
+                                max-width: 319px;
+                                font-size: 16px;
+                                line-height: 20px;
+
+                            }
+                            span{
+                                word-wrap: break-word;
+                            }
+                        }
+                        .landing-left__btn{
+                            font-family: $font-bold;
+                            margin-top: 44px;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 45px;
+                            color: $white-color;
+                            width: 174px;
+                            height: 53px;
+                            background: $orange-color;
+                            border-radius: 4px;
+                            @include xs{
+                                margin-top: 28px;
+                            }
+                        }
+                    }
+                    .header__landing-right.landing-right{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 220px;
+                        padding-top: 10px;
+                        @include lg{
+                            justify-content: end;
+                            margin-right: 100px;
+                        }
+                        @include md{
+                            justify-content: center;
+                            padding-top: unset;
+                            margin-bottom: 64px;
+                            margin-left: unset;
+                            margin-right: unset;
+                        }
+                        img{
+                            height: 124px;
+                            width: 151px;
+                            @include md{
+                                height: 84px;
+                                width: 100px;
+                            }
+
+
+
+                        }
+                    }
+                    @include md{
+                        flex-direction: column-reverse;
+
+                    }
+                }
+
+                .header__landing-arrow.landing-arrow{
+                    margin-top: 135px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: column;
+                    @include md{
+                        margin-bottom: 50px;
+                    }
+                    @include xs{
+                        margin-top: 68px;
+                    }
+                    .landing-arrow__text{
+                        font-family: $font-bold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 15px;
+                        line-height: 20px;
+                        color: $white-color;
+                        @include xs{
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                    }
+                    .landing-arrow__btn{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 19px;
+                        a{
+                            img{
+                                height: 71px;
+                                width: 62px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
         }
     }
 }

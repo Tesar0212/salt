@@ -1,9 +1,48 @@
 header
-    nav
-        .nav__logo
-            a(href="#")
-        .nav__toggler
-            span
-        ul.nav__menu
-            li.nav__menu-item
+    .container.container--nav
+        nav
+            .nav__logo
                 a(href="#")
+                    img(src="img/Salt.svg" alt="Brand logo")
+            .nav__toggler
+                span
+            ul.nav__menu
+                li.nav__menu-item.active
+                    a(href="#")
+                        | Home
+                li.nav__menu-item
+                    a(href="#")
+                        | Products
+                li.nav__menu-item
+                    a(href="#")
+                        | Services
+                li.nav__menu-item
+                    a(href="#")
+                        | Resources
+                li.nav__menu-item
+                    a(href="#")
+                        | About
+                li.nav__menu-item
+                    a(href="#")
+                        | Contact us
+    .container.container--landing
+        .header__landing-container
+            .header__landing-left.landing-left
+                h1.landing-left__title
+                    | Device Authentication
+                p.landing-left__text
+                    | SALT Group is a world leader in  authentication and security. We have
+                    br
+                    | a range of services to improve user authentication.
+                    br
+                    | Discover the possibilities with SALT.
+                button.landing-left__btn
+                    | GET STARTED
+            .header__landing-right.landing-right
+                img(src="img/Twitter.svg" alt="Twitter logo")
+        .header__landing-arrow.landing-arrow
+            .landing-arrow__text
+                | FIND OUT MORE
+            .landing-arrow__btn
+                a(href="#")
+                    img(src="img/Arrow-down.svg" alt="Arrow down")
