@@ -62,6 +62,7 @@ html{
         list-style-type: none;
         text-decoration: none;
         border: none;
+        scroll-behavior: smooth;
     }
     body{
         background: #F8F8F8;
@@ -92,6 +93,9 @@ html{
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    @include md{
+                        flex-wrap: wrap;
+                    }
                     .nav__logo{
                         a{
                             display: inline-block;
@@ -106,6 +110,9 @@ html{
                                 }
                             }
                         }
+                    }
+                    .nav__toggler.active{
+
                     }
                     .nav__toggler{
                         display: none;
@@ -143,52 +150,76 @@ html{
                             }
                         }
                     }
+                    .nav__menu.active{
+                        height: 168px;
+                        visibility: visible;
+                        opacity: 1;
+                        transition: .3s;
+                        .nav__menu-list{
+
+                        }
+
+                    }
                     .nav__menu{
                         margin-top: 7px;
+                        transition: .3s;
                         display: flex;
                         @include md{
-                            display: none;
+                            width: 100%;
+                            justify-content: end;
+                            visibility: hidden;
+                            height: 0;
+                            opacity: 0;
+                            transition: opacity .3s ;
+                            transition: height .4s;
                         }
-                        .nav__menu-item.active{
-                            &:after{
-                                opacity: 1;
-                                transition: .3s;
+                        .nav__menu-list{
+                            display: flex;
+                            @include md{
+                                flex-direction: column;
                             }
-                        }
-                        .nav__menu-item{
-                            margin-left: 28px;
-                            position: relative;
-                            a{
-                                font-family: $font-bold;
-                                font-style: normal;
-                                font-weight: 700;
-                                font-size: 15px;
-                                line-height: 18px;
-                                color: $white-color;
-                                text-transform: uppercase;
-                            }
-                            &:first-child{
-                                margin-left: unset;
-                            }
-                            &:after{
-                                content: "";
-                                display: block;
-                                bottom: -8px;
-                                width: 120%;
-                                left: calc(0px - 10%);
-                                position: absolute;
-                                height: 3px;
-                                background: $orange-color;
-                                opacity: 0;
-                                transition: .3s;
-                            }
-                            &:hover{
+                            .nav__menu-list-item{
+                                margin-left: 28px;
+                                position: relative;
+                                @include md{
+                                    margin-left: unset;
+                                    margin-bottom: 10px;
+                                    text-align: right;
+
+                                }
+                                a{
+                                    font-family: $font-bold;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    line-height: 18px;
+                                    color: $white-color;
+                                    text-transform: uppercase;
+                                }
+                                &:first-child{
+                                    margin-left: unset;
+                                }
                                 &:after{
-                                    opacity: 1;
+                                    content: "";
+                                    display: block;
+                                    bottom: -8px;
+                                    width: 120%;
+                                    left: calc(0px - 10%);
+                                    position: absolute;
+                                    height: 0px;
+                                    background: $orange-color;
+                                    opacity: 0;
                                     transition: .3s;
+                                }
+                                &:hover{
+                                    &:after{
+                                        opacity: 1;
+                                        transition: .3s;
+                                    }
                                 }
                             }
                         }
+
                     }
                 }
             }
