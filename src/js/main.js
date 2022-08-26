@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function()
               dots = document.querySelectorAll('.landing-slider__dots-item'),
               totalSlides = slides.length
         let count = 0,
-            width
+            width,
+            dotIndex = 0
 
         console.log(dots)
 
@@ -40,10 +41,13 @@ document.addEventListener('DOMContentLoaded', function()
         }
 
          function nextSlide() {
-            count++
+             count++
+             dotIndex++
             if (count >= totalSlides) {
                 count = 0
+                dotIndex = 0
             }
+            currentSlide(dotIndex)
             rollSlider()
         }
 
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function()
 
         setInterval(() =>{
             nextSlide()
+            console.log(dotIndex)
         }, 10000)
 
     }

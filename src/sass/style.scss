@@ -65,14 +65,12 @@ html{
         scroll-behavior: smooth;
     }
     body{
-        background: #F8F8F8;
+        background: #FFFFFF;
         .container{
             margin: 0 auto;
-            padding-left: 28px;
-            padding-right: 28px;
             @include lg{
-                //padding-left: 28px;
-                //padding-right: 28px;
+                padding-left: 28px;
+                padding-right: 28px;
             }
         }
 
@@ -215,6 +213,7 @@ html{
                                 }
                                 &:hover{
                                     &:after{
+                                        height: 3px;
                                         opacity: 1;
                                         transition: .3s;
                                     }
@@ -240,6 +239,9 @@ html{
                     flex-direction: column;
                     justify-content: center;
                     height: 100%;
+                    @include xs{
+                        display: none;
+                    }
                     .landing-slider__dots-item{
                         width: 19px;
                         height: 22px;
@@ -374,40 +376,119 @@ html{
                     }
                 }
             }
-            .header__landing-arrow.landing-arrow{
-                margin-top: 135px;
-                width: 100%;
-                display: flex;
-                justify-content: start;
-                align-items: center;
-                flex-direction: column;
-                @include lg{
+            .container--landing-arrow{
+                max-width: 1500px;
+                .header__landing-arrow.landing-arrow{
+                    margin-top: 135px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: column;
                     padding-bottom: 50px;
-                }
-                @include xs{
-                    margin-top: 68px;
-                }
-                .landing-arrow__text{
-                    font-family: $font-bold;
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 15px;
-                    line-height: 20px;
-                    color: $white-color;
+                    //@include lg{
+                    //    padding-bottom: 50px;
+                    //}
                     @include xs{
-                        font-size: 13px;
+                        margin-top: 68px;
+                    }
+                    .landing-arrow__text{
+                        font-family: $font-bold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 15px;
                         line-height: 20px;
+                        color: $white-color;
+                        @include xs{
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                    }
+                    .landing-arrow__btn{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 19px;
+                        a{
+                            img{
+                                height: 71px;
+                                width: 62px;
+                            }
+                        }
                     }
                 }
-                .landing-arrow__btn{
+            }
+        }
+        .important-data{
+            margin-top: 133px;
+            margin-bottom: 131px;
+            @include xs{
+                margin-top: 80px;
+            }
+            .container.container--important-data{
+                max-width: 900px;
+                .important-data__list{
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-top: 19px;
-                    a{
-                        img{
-                            height: 71px;
-                            width: 62px;
+                    justify-content: space-between;
+                    @include md{
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                    }
+                    .important-data__list-wrapper{
+                        @include md{
+                            padding: 0 20px;
+                            &:last-child{
+                                margin-top: 40px;
+                            }
+                        }
+                        @include sm{
+                            width: 100%;
+                            padding: unset;
+                            margin-top: 68px;
+                            &:first-child{
+                                margin-top: unset;
+                            }
+                            &:last-child{
+                                margin-top: 68px;
+                            }
+                        }
+
+                        .important-data__list-item{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .important-data__value{
+                                max-width: 223px;
+                                font-family: $font-bold;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 60px;
+                                line-height: 68px;
+                                color: $purple-color;
+                                text-align: center;
+                                @include xs{
+                                    font-size: 42px;
+                                    line-height: 50px;
+                                }
+                            }
+                            .important-data__text{
+                                margin-top: 14px;
+                                max-width: 255px;
+                                font-family: $font-bold;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 18px;
+                                text-align: center;
+                                letter-spacing: -0.02em;
+                                text-transform: uppercase;
+                                color: $purple-color;
+                                @include xs{
+                                    font-size: 13px;
+                                    line-height: 16px;
+                                    margin-top: 12px;
+                                }
+                            }
                         }
                     }
                 }
