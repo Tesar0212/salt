@@ -68,9 +68,11 @@ html{
         background: #F8F8F8;
         .container{
             margin: 0 auto;
+            padding-left: 28px;
+            padding-right: 28px;
             @include lg{
-                padding-left: 28px;
-                padding-right: 28px;
+                //padding-left: 28px;
+                //padding-right: 28px;
             }
         }
 
@@ -223,158 +225,193 @@ html{
                     }
                 }
             }
-            .container--landing{
-                max-width: 1152px;
-                display: flex;
+            .container--landing-slider{
+                position: relative;
+                max-width: 1500px;
                 margin-top: 124px;
-                flex-wrap: wrap;
                 @include md{
-                    margin-top: 53px;
+                    margin-top: 45px;
                 }
-                .header__landing-container{
+                .landing-slider__dots{
+                    position: absolute;
+                    right: 30px;
+                    top: 0;
                     display: flex;
-                    width: 100%;
-                    .header__landing-left.landing-left{
-
-
-                        margin-left: 82px;
-                        @include sm{
-                            margin-left: unset;
-                        }
-
-                        .landing-left__title{
-                            font-family: $font-bold;
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 55px;
-                            line-height: 55px;
-                            color: $white-color;
-                            max-width: 552px;
-                            @include xs{
-                                max-width: 214px;
-                                font-size: 32px;
-                                line-height: 40px;
-                            }
-                        }
-                        .landing-left__text{
-                            margin-top: 12px;
-                            font-family: $font-semibold;
-                            font-style: normal;
-                            font-weight: 600;
-                            font-size: 16px;
-                            line-height: 30px;
-                            color: $white-color;
-                            max-width: 548px;
-                            @include xs{
-                                margin-top: 16px;
-                                max-width: 319px;
-                                font-size: 16px;
-                                line-height: 20px;
-
-                            }
-                            span{
-                                word-wrap: break-word;
-                            }
-                        }
-                        .landing-left__btn{
-                            font-family: $font-bold;
-                            margin-top: 44px;
-                            cursor: pointer;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 14px;
-                            line-height: 45px;
-                            color: $white-color;
-                            width: 174px;
-                            height: 53px;
-                            background: $orange-color;
-                            border-radius: 4px;
-                            @include xs{
-                                margin-top: 28px;
-                            }
-                        }
-                    }
-                    .header__landing-right.landing-right{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-left: 220px;
-                        padding-top: 10px;
-                        @include lg{
-                            justify-content: end;
-                            margin-right: 100px;
-                        }
-                        @include md{
-                            justify-content: center;
-                            padding-top: unset;
-                            margin-bottom: 64px;
-                            margin-left: unset;
-                            margin-right: unset;
-                        }
-                        img{
-                            height: 124px;
-                            width: 151px;
-                            @include md{
-                                height: 84px;
-                                width: 100px;
-                            }
-
-
-
-                        }
-                    }
-                    @include md{
-                        flex-direction: column-reverse;
-
-                    }
-                }
-
-                .header__landing-arrow.landing-arrow{
-                    margin-top: 135px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
                     flex-direction: column;
-                    @include md{
-                        margin-bottom: 50px;
-                    }
-                    @include xs{
-                        margin-top: 68px;
-                    }
-                    .landing-arrow__text{
-                        font-family: $font-bold;
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 15px;
-                        line-height: 20px;
-                        color: $white-color;
-                        @include xs{
-                            font-size: 13px;
-                            line-height: 20px;
+                    justify-content: center;
+                    height: 100%;
+                    .landing-slider__dots-item{
+                        width: 19px;
+                        height: 22px;
+                        margin-bottom: 12px;
+                        background-image: url("../img/slider-dot.svg");
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        &:last-child{
+                            margin-bottom: unset;
                         }
                     }
-                    .landing-arrow__btn{
+                    .landing-slider__dots-item.active{
+                        background-image: url("../img/slider-dot-active.svg");
+                    }
+                }
+                .header__landing-slider.landing-slider{
+                    //border: 2px solid black;
+                    overflow: hidden;
+                    .landing-slider__line{
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin-top: 19px;
-                        a{
-                            img{
-                                height: 71px;
-                                width: 62px;
+                        transition: all ease 1s;
+                        .landing-slider__item{
+                            .container--slider-item{
+                                max-width: 1152px;
+                                display: flex;
+                                flex-wrap: wrap;
+                                padding-left: unset;
+                                padding-right: unset;
+
+                                .header__landing-container{
+                                    display: flex;
+                                    width: 100%;
+                                    .header__landing-left.landing-left{
+
+
+                                        margin-left: 82px;
+                                        @include sm{
+                                            margin-left: unset;
+                                        }
+
+                                        .landing-left__title{
+                                            font-family: $font-bold;
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 55px;
+                                            line-height: 55px;
+                                            color: $white-color;
+                                            max-width: 552px;
+                                            @include xs{
+                                                max-width: 214px;
+                                                font-size: 32px;
+                                                line-height: 40px;
+                                            }
+                                        }
+                                        .landing-left__text{
+                                            margin-top: 12px;
+                                            font-family: $font-semibold;
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            font-size: 16px;
+                                            line-height: 30px;
+                                            color: $white-color;
+                                            max-width: 548px;
+                                            @include xs{
+                                                margin-top: 16px;
+                                                max-width: 319px;
+                                                font-size: 16px;
+                                                line-height: 20px;
+
+                                            }
+                                            span{
+                                                word-wrap: break-word;
+                                            }
+                                        }
+                                        .landing-left__btn{
+                                            font-family: $font-bold;
+                                            margin-top: 44px;
+                                            cursor: pointer;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 14px;
+                                            line-height: 45px;
+                                            color: $white-color;
+                                            width: 174px;
+                                            height: 53px;
+                                            background: $orange-color;
+                                            border-radius: 4px;
+                                            @include xs{
+                                                margin-top: 28px;
+                                            }
+                                        }
+                                    }
+                                    .header__landing-right.landing-right{
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-left: 220px;
+                                        padding-top: 10px;
+                                        @include lg{
+                                            justify-content: end;
+                                            margin-right: 100px;
+                                        }
+                                        @include md{
+                                            justify-content: center;
+                                            padding-top: unset;
+                                            margin-bottom: 64px;
+                                            margin-left: unset;
+                                            margin-right: unset;
+                                        }
+                                        img{
+                                            height: 124px;
+                                            width: 151px;
+                                            @include md{
+                                                height: 84px;
+                                                width: 100px;
+                                            }
+
+
+
+                                        }
+                                    }
+                                    @include md{
+                                        flex-direction: column-reverse;
+
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-
-
-
-
+            .header__landing-arrow.landing-arrow{
+                margin-top: 135px;
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: column;
+                @include lg{
+                    padding-bottom: 50px;
+                }
+                @include xs{
+                    margin-top: 68px;
+                }
+                .landing-arrow__text{
+                    font-family: $font-bold;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: $white-color;
+                    @include xs{
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+                .landing-arrow__btn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 19px;
+                    a{
+                        img{
+                            height: 71px;
+                            width: 62px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
