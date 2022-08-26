@@ -731,12 +731,243 @@ html{
 
                             }
                         }
+                    }
+                }
+            }
+        }
 
 
 
 
 
 
+
+        footer{
+
+            background-color: #363636;
+            .container.container--footer{
+                max-width: 1155px;
+                padding-top: 60px;
+                padding-bottom: 50px;
+                display: flex;
+                @include md{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                @include sm{
+                    padding-bottom: unset;
+                }
+                .footer__twitter-post{
+                    max-width: 299px;
+                    height: 295px;
+                    width: 100%;
+                    background: #FFFFFF;
+                    @include md{
+                        margin-bottom: 60px;
+                        max-width: 700px;
+                    }
+                    @include xs{
+                        max-width: 299px;
+                    }
+                    .twitter-post__header {
+                        display: flex;
+                        background-color: $purple-color;
+                        height: 60px;
+
+                        .twitter-post__header-logo {
+                            width: 60px;
+                            height: 60px;
+                            background-color: #5634D1;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                width: 39px;
+                                height: 39px;
+                            }
+                        }
+
+                        .twitter-post__header-container {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            margin-left: 15px;
+
+                            .twitter-post__header-title {
+                                font-family: $font-semibold;
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 22px;
+                                line-height: 18px;
+                                letter-spacing: 0.008em;
+                                color: $white-color;
+                            }
+
+                            .twitter-post__header-subtitle {
+                                margin-top: 2px;
+                                font-family: $font-regular;
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 18px;
+                                letter-spacing: -0.008em;
+                                color: $white-color;
+                            }
+                        }
+                    }
+                    .twitter-post__main{
+                        padding: 19px 32px;
+                        .twitter-post__item{
+                            margin-bottom: 16px;
+                            &:last-child{
+                                margin-bottom: unset;
+                            }
+                            .twitter-post__item-text{
+                                span{
+                                    font-family: $font-regular;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 13px;
+                                    line-height: 18px;
+                                    letter-spacing: -0.02em;
+                                    color: #999999;
+                                }
+                                a{
+                                    font-family: $font-regular;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 13px;
+                                    line-height: 18px;
+                                    color: $purple-color;
+                                }
+                            }
+                            .twitter-post__item-date{
+                                margin-top: 4px;
+                                font-family: $font-regular;
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 11px;
+                                line-height: 18px;
+                                letter-spacing: -0.01em;
+                                color: #555555;
+                            }
+                        }
+                    }
+                }
+                .footer__list-container{
+                    display: flex;
+                    justify-content: space-between;
+                    align-content: center;
+                    margin-left: 120px;
+                    max-width: 734px;
+                    width: 100%;
+                    @include lg{
+                        margin-left: 50px;
+                    }
+                    @include md{
+                        margin-left: unset;
+                    }
+                    @include sm{
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                    }
+                    .footer__list{
+                        @include sm{
+                            padding: 0 40px;
+                            margin-bottom: 45px;
+                            &:last-child{
+                                margin-bottom: unset;
+                            }
+                        }
+                        @include xs{
+                            padding: 0 3px;
+                            max-width: 110px;
+                            &:last-child{
+                                max-width: 210px;
+                                .footer__list-title{
+                                    text-align: center;
+                                    margin-bottom: 19px;
+                                    &:before{
+                                        left: 38px;
+                                    }
+                                }
+                            }
+                        }
+                        .footer__list-title{
+                            font-family: $font-bold;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 20px;
+                            text-transform: uppercase;
+                            color: $orange-color;
+                            padding-left: 26px;
+                            position: relative;
+                            margin-bottom: 20px;
+                            @include xs{
+                                margin-bottom: 10px;
+                            }
+                            &:before{
+                                content: '';
+                                position: absolute;
+                                width: 18px;
+                                height: 20px;
+                                background-image: url("../img/title-dot.svg");
+                                top: calc(50% - 10px);
+                                left: 0;
+                            }
+                        }
+                        .footer__list-item{
+                            margin-bottom: 8px;
+                            @include xs{
+                                margin-bottom: 4px;
+                            }
+                            .footer__phone, .footer__email, a{
+                                font-family: $font-regular;
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 18px;
+                                color: $white-color;
+                                text-transform: uppercase;
+                                span{
+                                    text-transform: none;
+                                    margin-left: 20px;
+                                }
+                            }
+                            a{
+                                line-height: 20px;
+                            }
+                            .footer__phone{
+
+                            }
+                            .footer__email{
+
+                            }
+                        }
+                    }
+                }
+            }
+            .footer__logo{
+                margin: 0 auto;
+                max-width: 1565px;
+                position: relative;
+                @include sm{
+                    display: flex;
+                    justify-content: center;
+                    padding: 80px;
+                }
+                img{
+                    top: -120px;
+                    right: 20px;
+                    position: absolute;
+                    height: 86px;
+                    width: 75px;
+                    @include sm{
+                        position: unset;
+                        width: 88px;
+                        height: 100px;
                     }
                 }
             }
