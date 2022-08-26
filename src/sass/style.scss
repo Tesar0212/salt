@@ -9,6 +9,11 @@ $font-regular : Proximanova Regular, sans-serif;
 
 
 
+@mixin xl{
+    @media screen and (max-width: 1400px){
+        @content
+    }
+}
 @mixin lg{
     @media screen and (max-width: 1200px){
         @content
@@ -57,18 +62,21 @@ $font-regular : Proximanova Regular, sans-serif;
 
 
 html{
+    scroll-behavior: smooth;
     *{
         margin: 0;
         padding: 0;
         list-style-type: none;
         text-decoration: none;
         border: none;
-        scroll-behavior: smooth;
+
     }
     body{
         background: #FFFFFF;
         .container{
             margin: 0 auto;
+            padding-left: 28px;
+            padding-right: 28px;
             @include lg{
                 padding-left: 28px;
                 padding-right: 28px;
@@ -207,7 +215,7 @@ html{
                                     width: 120%;
                                     left: calc(0px - 10%);
                                     position: absolute;
-                                    height: 0px;
+                                    height: 0;
                                     background: $orange-color;
                                     opacity: 0;
                                     transition: .3s;
@@ -421,10 +429,10 @@ html{
             }
         }
         .important-data{
-            margin-top: 133px;
-            margin-bottom: 131px;
+            padding-top: 133px;
+            padding-bottom: 131px;
             @include xs{
-                margin-top: 80px;
+                padding-top: 80px;
             }
             .container.container--important-data{
                 max-width: 900px;
@@ -437,7 +445,7 @@ html{
                     }
                     .important-data__list-wrapper{
                         @include md{
-                            padding: 0 20px;
+                            padding: 0 23px;
                             &:last-child{
                                 margin-top: 40px;
                             }
@@ -498,6 +506,7 @@ html{
         .what-we-do{
             padding-top: 145px;
             background: #f8f8f8;
+            padding-bottom: 50px;
             @include xs{
                 padding-top: 32px;
             }
@@ -737,6 +746,188 @@ html{
         }
 
 
+        .product-spotlight {
+            padding-top: 110px;
+            padding-bottom: 95px;
+            @include xs{
+                padding-top: 32px;
+            }
+
+            .container.container--product-spotlight {
+                max-width: 1275px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include md {
+                    flex-direction: column;
+                    justify-content: unset;
+                }
+                @include sm{
+                    align-items: unset;
+                }
+
+                .product-spotlight__left {
+                    max-width: 455px;
+
+                    .product-spotlight__title {
+                        font-family: $font-bold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 40px;
+                        line-height: 55px;
+                        color: $purple-color;
+                        @include xs{
+                            font-size: 24px;
+                            line-height: 32px;
+                        }
+                    }
+
+                    .product-spotlight__description {
+                        margin-top: 10px;
+                        font-family: $font-regular;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 21px;
+                        letter-spacing: -0.02em;
+                        color: $gray-color;
+                        @include xs{
+                            margin-top: 15px;
+                            font-size: 15px;
+                            line-height: 21px;
+                            max-width: 295px;
+                        }
+                    }
+
+                    .product-spotlight__btn {
+                        margin-top: 26px;
+                        width: 171px;
+                        height: 44px;
+                        background: $orange-color;
+                        border-radius: 4px;
+                        font-family: $font-bold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: $white-color;
+                        text-transform: uppercase;
+                        @include md{
+                            display: none;
+                        }
+                    }
+                }
+
+                .product-spotlight__right {
+                    margin-right: -25px;
+                    margin-left: 25px;
+                    max-width: 724px;
+                    width: 100%;
+                    @include xl{
+                        margin-right: unset;
+                    }
+                    @include md {
+                        margin-left: unset;
+                        margin-top: 28px;
+                    }
+
+                    .product-spotlight__player-preview {
+                        height: 0;
+                        padding-bottom: 61.32%;
+                        background-image: url("../img/player-preview.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative;
+
+                        .product-spotlight__player-open-btn.player-open-btn {
+                            position: absolute;
+                            top: calc(50% - (115px / 2));
+                            left: calc(50% - (120px / 2));
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            @include xs{
+                                top: calc(50% - (30px / 2));
+                                left: calc(50% - (80px / 2));
+                            }
+                            img {
+                                width: 77px;
+                                height: 77px;
+                                @include xs{
+                                    width: 34px;
+                                    height: 34px;
+                                }
+                            }
+
+                            .player-open-btn__text {
+                                margin-top: 23px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 15px;
+                                line-height: 20px;
+                                text-transform: uppercase;
+                                color: $white-color;
+                                @include xs{
+                                    font-size: 10px;
+                                    line-height: 14px;
+                                    margin-top: 15px;
+                                }
+                            }
+                            .player-open-btn__second-text{
+                                position: absolute;
+                                margin-top: 16px;
+                                font-family: 'Raleway';
+                                font-style: normal;
+                                font-weight: 800;
+                                font-size: 32px;
+                                line-height: 38px;
+                                text-transform: uppercase;
+                                color: $white-color;
+                                width: 424px;
+                                bottom: -80px;
+                                @include md{
+                                    text-align: center;
+                                }
+                                @include xs{
+                                    font-size: 13px;
+                                    line-height: 22px;
+                                    width: 300px;
+                                    bottom: -20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .product-spotlight__more-info{
+                    display: none;
+                    @include md{
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                        margin-top: 42px;
+                        width: 171px;
+                        height: 44px;
+                        background: $orange-color;
+                        border-radius: 4px;
+                        font-family: $font-bold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: $white-color;
+                        text-transform: uppercase;
+                    }
+                }
+
+            }
+
+        }
+
+
+
 
 
 
@@ -938,12 +1129,6 @@ html{
                             }
                             a{
                                 line-height: 20px;
-                            }
-                            .footer__phone{
-
-                            }
-                            .footer__email{
-
                             }
                         }
                     }
