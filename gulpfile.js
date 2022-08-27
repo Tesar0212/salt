@@ -35,7 +35,7 @@ const server = () => {
 
 const build =  series(
     clear,
-    parallel(pug, scss, js, img, font)
+    parallel(pug, scss, js, img, font, video)
 )
 
 const  dev = series(

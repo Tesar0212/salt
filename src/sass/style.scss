@@ -1,6 +1,6 @@
-@import "variables";
-@import "mixins";
-@import "fonts";
+@import "variables/variables";
+@import "mixins/mixins";
+@import "fonts/fonts";
 
 html{
     scroll-behavior: smooth;
@@ -198,6 +198,7 @@ html{
                         display: none;
                     }
                     .landing-slider__dots-item{
+                        cursor: pointer;
                         width: 19px;
                         height: 22px;
                         margin-bottom: 12px;
@@ -803,6 +804,7 @@ html{
                                 left: calc(50% - (80px / 2));
                             }
                             img {
+                                cursor: pointer;
                                 width: 77px;
                                 height: 77px;
                                 @include xs{
@@ -1040,6 +1042,7 @@ html{
                                 font-family: $raleway-regular;
                                 box-sizing: inherit;
                                 padding-left: 13px;
+                                padding-right: 13px;
                                 width: 100%;
                                 margin-bottom: 37px;
                                 min-height: 40px;
@@ -1062,12 +1065,15 @@ html{
                                 margin-bottom: unset;
                                 resize: none;
                                 min-height: 100px;
+                                padding-top: 9px;
+                                padding-bottom: 9px;
                                 @include xs{
                                     margin-bottom: unset;
                                     min-height: 96px;
                                 }
                             }
                             .contact-us__submit{
+                                cursor: pointer;
                                 width: 201px;
                                 height: 53px;
                                 font-family: $proxima-bold;
