@@ -366,6 +366,11 @@ html{
                         justify-content: center;
                         margin-top: 19px;
                         a{
+                            transition: ease-in-out .25s;
+                            &:hover{
+                                transition: ease-in-out .25s;
+                                transform: translateY(3px);
+                            }
                             img{
                                 height: 71px;
                                 width: 62px;
@@ -986,7 +991,7 @@ html{
                 }
                 .contact-us__right{
                     flex-grow: 3;
-                    margin-right: -350px;
+                    margin-right: -392px;
                     @include xl{
                         margin-right: unset;
                     }
@@ -1096,20 +1101,11 @@ html{
                 }
             }
         }
-
-
-
-
-
-
-
-
         footer{
-
             background-color: #363636;
             .container.container--footer{
                 max-width: 1155px;
-                padding-top: 58px;
+                padding-top: 55px;
                 padding-bottom: 50px;
                 display: flex;
                 @include md{
@@ -1304,7 +1300,7 @@ html{
                                 &:hover{
                                     &:after{
                                         width: 70%;
-                                        transition: .5s;
+                                        transition: .35s;
                                     }
                                 }
                                 &:after{
@@ -1315,6 +1311,7 @@ html{
                                     bottom: -3px;
                                     left: 0;
                                     background: $orange-color;
+                                    transition: .35s;
                                 }
                             }
                         }

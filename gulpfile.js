@@ -38,7 +38,7 @@ const build =  series(
     parallel(pug, scss, js, img, font, video)
 )
 
-const  dev = series(
+const dev = series(
     clear,
     parallel(pug, scss, js, img, font, video),
     parallel(watcher, server)
@@ -56,7 +56,7 @@ exports.video = video
 
 
 //Сборка
-exports.default =  app.isProd
+exports.default = app.isProd
     ? build
     : dev
 

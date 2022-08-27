@@ -357,6 +357,21 @@ html body header .container--landing-arrow .header__landing-arrow.landing-arrow 
   margin-top: 19px;
 }
 
+html body header .container--landing-arrow .header__landing-arrow.landing-arrow .landing-arrow__btn a {
+  -webkit-transition: ease-in-out 0.25s;
+  -o-transition: ease-in-out 0.25s;
+  transition: ease-in-out 0.25s;
+}
+
+html body header .container--landing-arrow .header__landing-arrow.landing-arrow .landing-arrow__btn a:hover {
+  -webkit-transition: ease-in-out 0.25s;
+  -o-transition: ease-in-out 0.25s;
+  transition: ease-in-out 0.25s;
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+}
+
 html body header .container--landing-arrow .header__landing-arrow.landing-arrow .landing-arrow__btn a img {
   height: 71px;
   width: 62px;
@@ -804,7 +819,7 @@ html body section.contact-us .container.container--contact-us .contact-us__right
   -webkit-box-flex: 3;
   -ms-flex-positive: 3;
   flex-grow: 3;
-  margin-right: -350px;
+  margin-right: -392px;
 }
 
 html body section.contact-us .container.container--contact-us .contact-us__right .contact-us__form-title {
@@ -892,7 +907,7 @@ html body footer {
 
 html body footer .container.container--footer {
   max-width: 1155px;
-  padding-top: 58px;
+  padding-top: 55px;
   padding-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1050,9 +1065,9 @@ html body footer .container.container--footer .footer__list-container .footer__l
 
 html body footer .container.container--footer .footer__list-container .footer__list .footer__list-item a:hover:after {
   width: 70%;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.35s;
+  -o-transition: 0.35s;
+  transition: 0.35s;
 }
 
 html body footer .container.container--footer .footer__list-container .footer__list .footer__list-item a:after {
@@ -1063,6 +1078,9 @@ html body footer .container.container--footer .footer__list-container .footer__l
   bottom: -3px;
   left: 0;
   background: #FF8B00;
+  -webkit-transition: 0.35s;
+  -o-transition: 0.35s;
+  transition: 0.35s;
 }
 
 html body footer .footer__logo {
