@@ -707,9 +707,12 @@ html{
 
             .container.container--product-spotlight {
                 max-width: 1275px;
-                display: flex;
                 justify-content: space-between;
-                align-items: center;
+                @include xl{
+                    align-items: center;
+                }
+                display: flex;
+
                 @include md {
                     flex-direction: column;
                     justify-content: unset;
@@ -720,6 +723,10 @@ html{
 
                 .product-spotlight__left {
                     max-width: 455px;
+                    padding-top: 96px;
+                    @include xl{
+                        padding-top: unset;
+                    }
 
                     .product-spotlight__title {
                         font-family: $proxima-bold;
@@ -798,15 +805,19 @@ html{
 
                         .product-spotlight__player-open-btn.player-open-btn {
                             position: absolute;
-                            top: calc(50% - (115px / 2));
-                            left: calc(50% - (120px / 2));
+                            top: calc(50% - (48px));
+                            left: calc(50% - (74px));
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             flex-direction: column;
+                            @include xl{
+                                top: calc(50% - (57.5px));
+                                left: calc(50% - (60px));
+                            }
                             @include xs{
-                                top: calc(50% - (30px / 2));
-                                left: calc(50% - (80px / 2));
+                                top: calc(50% - (15px));
+                                left: calc(50% - (40px));
                             }
                             img {
                                 cursor: pointer;
@@ -845,6 +856,7 @@ html{
                                 color: $white-color;
                                 width: 424px;
                                 bottom: -80px;
+                                left: -160px;
                                 @include md{
                                     text-align: center;
                                 }
@@ -852,7 +864,8 @@ html{
                                     font-size: 13px;
                                     line-height: 22px;
                                     width: 300px;
-                                    bottom: -20px;
+                                    bottom: -25px;
+                                    left: -110px;
                                 }
                             }
                         }
@@ -1079,6 +1092,7 @@ html{
                             }
                             .contact-us__submit{
                                 cursor: pointer;
+                                text-transform: uppercase;
                                 width: 201px;
                                 height: 53px;
                                 font-family: $proxima-bold;

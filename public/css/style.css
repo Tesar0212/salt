@@ -587,19 +587,17 @@ html body .product-spotlight {
 
 html body .product-spotlight .container.container--product-spotlight {
   max-width: 1275px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 html body .product-spotlight .container.container--product-spotlight .product-spotlight__left {
   max-width: 455px;
+  padding-top: 96px;
 }
 
 html body .product-spotlight .container.container--product-spotlight .product-spotlight__left .product-spotlight__title {
@@ -657,8 +655,8 @@ html body .product-spotlight .container.container--product-spotlight .product-sp
 
 html body .product-spotlight .container.container--product-spotlight .product-spotlight__right .product-spotlight__player-preview .product-spotlight__player-open-btn.player-open-btn {
   position: absolute;
-  top: calc(50% - 57.5px);
-  left: calc(50% - 60px);
+  top: calc(50% - 48px);
+  left: calc(50% - 74px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -695,6 +693,7 @@ html body .product-spotlight .container.container--product-spotlight .product-sp
   color: #FFFFFF;
   width: 424px;
   bottom: -80px;
+  left: -160px;
 }
 
 html body .product-spotlight .container.container--product-spotlight .product-spotlight__more-info {
@@ -893,6 +892,7 @@ html body section.contact-us .container.container--contact-us .contact-us__right
 html body section.contact-us .container.container--contact-us .contact-us__right .contact-us__form .contact-us__form-item .contact-us__submit {
   font: normal 700 14px/18px Proximanova Bold, sans-serif;
   cursor: pointer;
+  text-transform: uppercase;
   width: 201px;
   height: 53px;
   color: #FFFFFF;
@@ -1098,8 +1098,23 @@ html body footer .footer__logo img {
 }
 
 @media screen and (max-width: 1400px) {
+  html body .product-spotlight .container.container--product-spotlight {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  html body .product-spotlight .container.container--product-spotlight .product-spotlight__left {
+    padding-top: unset;
+  }
+
   html body .product-spotlight .container.container--product-spotlight .product-spotlight__right {
     margin-right: unset;
+  }
+
+  html body .product-spotlight .container.container--product-spotlight .product-spotlight__right .product-spotlight__player-preview .product-spotlight__player-open-btn.player-open-btn {
+    top: calc(50% - 57.5px);
+    left: calc(50% - 60px);
   }
 
   html body section.contact-us .container.container--contact-us .contact-us__right {
@@ -1567,7 +1582,8 @@ html body footer .footer__logo img {
     font-size: 13px;
     line-height: 22px;
     width: 300px;
-    bottom: -20px;
+    bottom: -25px;
+    left: -110px;
   }
 
   html body section.contact-us {
