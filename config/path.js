@@ -46,6 +46,12 @@ module.exports = {
         dest: pathDest + "/font"
     },
 
+    video: {
+        src: pathSrc + "/video/*.mp4",
+        watch: pathSrc + "/video/**/*.mp4",
+        dest: pathDest + "/video"
+    },
+
 
 
 

@@ -2,12 +2,15 @@ document.addEventListener('DOMContentLoaded', function()
 {
     //toggler
 
-    let toggler = document.querySelector('.nav__toggler'),
-        menu = document.querySelector('.nav__menu')
-    toggler.onclick = function () {
-        toggler.classList.toggle('active')
-        menu.classList.toggle('active')
+    function toggler(){
+        let toggler = document.querySelector('.nav__toggler'),
+            menu = document.querySelector('.nav__menu')
+        toggler.onclick = function () {
+            toggler.classList.toggle('active')
+            menu.classList.toggle('active')
+        }
     }
+
 
     //Slider
     function slider(){
@@ -23,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function()
         let count = 0,
             width,
             dotIndex = 0
-
-        console.log(dots)
 
         //Functions
 
@@ -82,11 +83,49 @@ document.addEventListener('DOMContentLoaded', function()
 
         setInterval(() =>{
             nextSlide()
-            console.log(dotIndex)
         }, 10000)
 
     }
 
+    //Popup
+
+    function popup(){
+
+        //var
+
+        const openBtn = document.querySelector('.player-open-btn'),
+            popupBody = document.querySelector('.product-spotlight__popup'),
+            closeBtn = document.querySelector('.product-spotlight__popup-close'),
+            video = document.querySelector('.product-spotlight__popup-video'),
+            html = document.querySelector('html')
+
+        //func
+
+        function openPopup(){
+            popupBody.classList.add('open')
+            openBtn.classList.add('active')
+            html.style.overflow = "hidden"
+        }
+
+        function closePopup(){
+            popupBody.classList.remove('open')
+            openBtn.classList.remove('active')
+            video.pause()
+            setTimeout(() =>{
+                html.style.overflow = "unset"
+            }, 1000)
+
+        }
+
+        openBtn.addEventListener('click', openPopup)
+        closeBtn.addEventListener('click', closePopup)
+    }
+
+
+
+
+    toggler()
+    popup()
     slider()
 
 })

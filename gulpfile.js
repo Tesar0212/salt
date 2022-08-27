@@ -12,6 +12,7 @@ const scss = require("./task/scss.js")
 const js = require("./task/js.js")
 const img = require("./task/img.js")
 const font = require("./task/font.js")
+const video = require("./task/video.js")
 
 //Наблюдение
 const watcher = () => {
@@ -20,6 +21,7 @@ const watcher = () => {
     watch(path.js.watch, js).on("all", browserSync.reload)
     watch(path.img.watch, img).on("all", browserSync.reload)
     watch(path.font.watch, font).on("all", browserSync.reload)
+    watch(path.video.watch, video).on("all", browserSync.reload)
 }
 
 //Сервер
@@ -38,7 +40,7 @@ const build =  series(
 
 const  dev = series(
     clear,
-    parallel(pug, scss, js, img, font),
+    parallel(pug, scss, js, img, font, video),
     parallel(watcher, server)
 )
 
@@ -50,6 +52,7 @@ exports.scss = scss
 exports.js = js
 exports.img = img
 exports.font = font
+exports.video = video
 
 
 //Сборка
