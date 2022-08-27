@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function()
             slides.forEach( item => {
                 item.style.width = width + 'px'
             })
+            rollSlider()
         }
 
         function rollSlider(){
@@ -120,9 +121,6 @@ document.addEventListener('DOMContentLoaded', function()
         openBtn.addEventListener('click', openPopup)
         closeBtn.addEventListener('click', closePopup)
     }
-
-
-
 
     toggler()
     popup()

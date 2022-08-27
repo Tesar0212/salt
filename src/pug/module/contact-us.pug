@@ -1,0 +1,30 @@
+section.contact-us
+    .container.container--contact-us
+        .contact-us__left
+            .contact-us__title
+                | Ready
+                br
+                | to get started?
+        .contact-us__right
+            .contact-us__form-title
+                | Contact us
+            form.contact-us__form
+                .contact-us__names
+                    .contact-us__form-item
+                        label
+                            | First name
+                        input(type="text" placeholder="First Name" required).contact-us__first-name
+                    .contact-us__form-item
+                        label
+                            | First name
+                        input(type="text" placeholder="Last Name" required).contact-us__last-name
+                .contact-us__form-item
+                    label
+                        | Email address
+                    input(type="email" placeholder='Email Address' required).contact-us__email-address
+                .contact-us__form-item
+                    label
+                        | Your message
+                    textarea(required).contact-us__textarea
+                .contact-us__form-item.--flex
+                    input(type="submit" value="Send" ).contact-us__submit
