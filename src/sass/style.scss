@@ -1,65 +1,6 @@
-$title-font-size: 22px;
-$orange-color : #FF8B00;
-$purple-color : #7050E5;
-$gray-color : #878787;
-$white-color : #FFFFFF;
-$font-bold : Proximanova Bold, sans-serif;
-$font-semibold : Proximanova Semibold, sans-serif;
-$font-regular : Proximanova Regular, sans-serif;
-
-
-
-@mixin xl{
-    @media screen and (max-width: 1400px){
-        @content
-    }
-}
-@mixin lg{
-    @media screen and (max-width: 1200px){
-        @content
-    }
-}
-@mixin md{
-    @media screen and (max-width: 992px){
-        @content
-    }
-}
-@mixin sm{
-    @media screen and (max-width: 768px){
-        @content
-    }
-}
-@mixin xs{
-    @media screen and (max-width: 500px){
-        @content
-    }
-}
-
-
-@font-face {
-    font-family: "Proximanova Bold";
-    src: url("../font/proximanova_bold.eot") format("embedded-opentype"),
-    url("../font/proximanova_bold.woff") format("woff"),
-    url("../font/proximanova_bold.woff2") format("woff2"),
-    url("../font/proximanova_bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Proximanova Semibold";
-    src: url("../font/proximanova_semibold.eot") format("embedded-opentype"),
-    url("../font/proximanova_semibold.woff") format("woff"),
-    url("../font/proximanova_semibold.woff2") format("woff2"),
-    url("../font/proximanova_semibold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Proximanova Regular";
-    src: url("../font/proximanova_regular.eot") format("embedded-opentype"),
-    url("../font/proximanova_regular.woff") format("woff"),
-    url("../font/proximanova_regular.woff2") format("woff2"),
-    url("../font/proximanova_regular.ttf") format("truetype");
-}
-
+@import "variables";
+@import "mixins";
+@import "fonts";
 
 html{
     scroll-behavior: smooth;
@@ -202,7 +143,7 @@ html{
 
                                 }
                                 a{
-                                    font-family: $font-bold;
+                                    font-family: $proxima-bold;
                                     font-style: normal;
                                     font-weight: 700;
                                     font-size: 15px;
@@ -297,7 +238,7 @@ html{
                                         }
 
                                         .landing-left__title{
-                                            font-family: $font-bold;
+                                            font-family: $proxima-bold;
                                             font-style: normal;
                                             font-weight: 700;
                                             font-size: 55px;
@@ -312,7 +253,7 @@ html{
                                         }
                                         .landing-left__text{
                                             margin-top: 12px;
-                                            font-family: $font-semibold;
+                                            font-family: $proxima-semibold;
                                             font-style: normal;
                                             font-weight: 600;
                                             font-size: 16px;
@@ -331,7 +272,7 @@ html{
                                             }
                                         }
                                         .landing-left__btn{
-                                            font-family: $font-bold;
+                                            font-family: $proxima-bold;
                                             margin-top: 44px;
                                             cursor: pointer;
                                             display: flex;
@@ -407,7 +348,7 @@ html{
                         margin-top: 68px;
                     }
                     .landing-arrow__text{
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 15px;
@@ -473,7 +414,7 @@ html{
                             align-items: center;
                             .important-data__value{
                                 max-width: 223px;
-                                font-family: $font-bold;
+                                font-family: $proxima-bold;
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 60px;
@@ -488,7 +429,7 @@ html{
                             .important-data__text{
                                 margin-top: 14px;
                                 max-width: 255px;
-                                font-family: $font-bold;
+                                font-family: $proxima-bold;
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 16px;
@@ -523,7 +464,7 @@ html{
                     padding-right: 54px;
                     display: flex;
                     justify-content: end;
-                    font-family: $font-bold;
+                    font-family: $proxima-bold;
                     font-style: normal;
                     font-weight: 700;
                     font-size: 60px;
@@ -594,7 +535,7 @@ html{
                             }
                             .what-we-do__item-title{
                                 margin-top: 25px;
-                                font-family: $font-bold;
+                                font-family: $proxima-bold;
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 18px;
@@ -608,7 +549,7 @@ html{
                             }
                             .what-we-do__item-description{
                                 margin-top: 8px;
-                                font-family: $font-regular;
+                                font-family: $proxima-regular;
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 15px;
@@ -775,7 +716,7 @@ html{
                     max-width: 455px;
 
                     .product-spotlight__title {
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 40px;
@@ -789,7 +730,7 @@ html{
 
                     .product-spotlight__description {
                         margin-top: 10px;
-                        font-family: $font-regular;
+                        font-family: $proxima-regular;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 15px;
@@ -805,18 +746,20 @@ html{
                     }
 
                     .product-spotlight__btn {
+                        cursor: pointer;
                         margin-top: 26px;
                         width: 171px;
                         height: 44px;
                         background: $orange-color;
                         border-radius: 4px;
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 14px;
                         line-height: 18px;
                         color: $white-color;
                         text-transform: uppercase;
+                        @include box-shadow-btn;
                         @include md{
                             display: none;
                         }
@@ -843,6 +786,9 @@ html{
                         background-repeat: no-repeat;
                         background-size: cover;
                         position: relative;
+                        @include retina(){
+                            background-image: url("../img/player-preview.png");
+                        }
 
                         .product-spotlight__player-open-btn.player-open-btn {
                             position: absolute;
@@ -867,7 +813,7 @@ html{
 
                             .player-open-btn__text {
                                 margin-top: 23px;
-                                font-family: 'Raleway';
+                                font-family: $raleway-regular;
                                 font-style: normal;
                                 font-weight: 600;
                                 font-size: 15px;
@@ -883,7 +829,7 @@ html{
                             .player-open-btn__second-text{
                                 position: absolute;
                                 margin-top: 16px;
-                                font-family: 'Raleway';
+                                font-family: $raleway-regular;
                                 font-style: normal;
                                 font-weight: 800;
                                 font-size: 32px;
@@ -909,6 +855,7 @@ html{
                 .product-spotlight__more-info{
                     display: none;
                     @include md{
+                        cursor: pointer;
                         margin-left: auto;
                         margin-right: auto;
                         display: block;
@@ -917,13 +864,14 @@ html{
                         height: 44px;
                         background: $orange-color;
                         border-radius: 4px;
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 14px;
                         line-height: 18px;
                         color: $white-color;
                         text-transform: uppercase;
+                        @include box-shadow-btn
                     }
                 }
             }
@@ -999,6 +947,9 @@ html{
             background-image: url('../img/contact-us-bg.png');
             background-size: cover;
             background-repeat: no-repeat;
+            @include retina(){
+                background-image: url('../img/contact-us-bg.png');
+            }
             @include xs{
                 padding-top: 42px;
                 padding-bottom: 37px;
@@ -1015,7 +966,7 @@ html{
                 .contact-us__left{
                     flex-grow: 1;
                     .contact-us__title{
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 55px;
@@ -1042,7 +993,7 @@ html{
                     }
                     .contact-us__form-title{
 
-                        font-family: $font-bold;
+                        font-family: $proxima-bold;
                         font-style: normal;
                         font-weight: 700;
                         font-size: 28px;
@@ -1073,7 +1024,7 @@ html{
                             width: 100%;
                             label{
                                 margin-bottom: 16px;
-                                font-family: $font-semibold;
+                                font-family: $proxima-semibold;
                                 font-style: normal;
                                 font-weight: 600;
                                 font-size: 13px;
@@ -1086,6 +1037,7 @@ html{
                             .contact-us__last-name,
                             .contact-us__email-address,
                             .contact-us__textarea {
+                                font-family: $raleway-regular;
                                 box-sizing: inherit;
                                 padding-left: 13px;
                                 width: 100%;
@@ -1094,6 +1046,7 @@ html{
                                 background: $white-color;
                                 border: 1px solid #292929;
                                 border-radius: 8px;
+                                font-size: 16px;
                                 @include xs{
                                     margin-bottom: 30px;
                                 }
@@ -1117,7 +1070,7 @@ html{
                             .contact-us__submit{
                                 width: 201px;
                                 height: 53px;
-                                font-family: $font-bold;
+                                font-family: $proxima-bold;
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 14px;
@@ -1198,7 +1151,7 @@ html{
                             margin-left: 15px;
 
                             .twitter-post__header-title {
-                                font-family: $font-semibold;
+                                font-family: $proxima-semibold;
                                 font-style: normal;
                                 font-weight: 600;
                                 font-size: 22px;
@@ -1209,7 +1162,7 @@ html{
 
                             .twitter-post__header-subtitle {
                                 margin-top: 2px;
-                                font-family: $font-regular;
+                                font-family: $proxima-regular;
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 14px;
@@ -1228,7 +1181,7 @@ html{
                             }
                             .twitter-post__item-text{
                                 span{
-                                    font-family: $font-regular;
+                                    font-family: $proxima-regular;
                                     font-style: normal;
                                     font-weight: 400;
                                     font-size: 13px;
@@ -1237,7 +1190,7 @@ html{
                                     color: #999999;
                                 }
                                 a{
-                                    font-family: $font-regular;
+                                    font-family: $proxima-regular;
                                     font-style: normal;
                                     font-weight: 400;
                                     font-size: 13px;
@@ -1247,7 +1200,7 @@ html{
                             }
                             .twitter-post__item-date{
                                 margin-top: 4px;
-                                font-family: $font-regular;
+                                font-family: $proxima-regular;
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 11px;
@@ -1298,7 +1251,7 @@ html{
                             }
                         }
                         .footer__list-title{
-                            font-family: $font-bold;
+                            font-family: $proxima-bold;
                             font-style: normal;
                             font-weight: 700;
                             font-size: 14px;
@@ -1327,7 +1280,7 @@ html{
                                 margin-bottom: 4px;
                             }
                             .footer__phone, .footer__email, a{
-                                font-family: $font-regular;
+                                font-family: $proxima-regular;
                                 font-style: normal;
                                 font-weight: 600;
                                 font-size: 14px;
@@ -1341,6 +1294,22 @@ html{
                             }
                             a{
                                 line-height: 20px;
+                                position: relative;
+                                &:hover{
+                                    &:after{
+                                        width: 70%;
+                                        transition: .5s;
+                                    }
+                                }
+                                &:after{
+                                    content: '';
+                                    width: 0;
+                                    position: absolute;
+                                    height: 2px;
+                                    bottom: -3px;
+                                    left: 0;
+                                    background: $orange-color;
+                                }
                             }
                         }
                     }

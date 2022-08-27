@@ -10,6 +10,7 @@ const notify = require("gulp-notify")
 const pugs = require("gulp-pug")
 const webpHtml = require("gulp-webp-html")
 const gulpIf = require("gulp-if");
+const retina = require("gulp-img-retina");
 
 
 
@@ -24,6 +25,7 @@ const pug = () => {
         }))
         .pipe(pugs(app.pug))
         .pipe(gulpIf(app.isProd, webpHtml()))
+        .pipe(gulpIf(app.isProd, retina()))
         .pipe(dest(path.pug.dest))
 }
 

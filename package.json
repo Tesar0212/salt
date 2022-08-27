@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
-    "build" : "gulp --production"
+    "build": "gulp --production"
   },
   "browserslist": [
     "last 3 versions"
@@ -50,5 +50,8 @@
     "sass": "^1.54.5",
     "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-img-retina": "^0.0.4"
   }
 }
